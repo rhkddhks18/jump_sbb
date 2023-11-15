@@ -19,5 +19,6 @@ public class Answer {
 
     private LocalDateTime createDate;
 
-//    private Question question;
+    @ManyToOne
+    private Question question;
 }
