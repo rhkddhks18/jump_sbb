@@ -11,4 +11,9 @@ public class MainController {
     public String start (){
         return "안녕하세요";
     }
+
+    @GetMapping("/")
+    public String root() {
+        return "redirect:/question/list";
+    }
 }
