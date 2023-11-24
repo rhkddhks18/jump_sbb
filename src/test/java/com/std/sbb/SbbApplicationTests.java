@@ -9,6 +9,7 @@ import com.std.sbb.answer.Answer;
 import com.std.sbb.answer.AnswerRepository;
 import com.std.sbb.question.Question;
 import com.std.sbb.question.QuestionRepository;
+import com.std.sbb.question.QuestionService;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -81,5 +82,15 @@ class SbbApplicationTests {
 		a.setQuestion(q);
 		a.setCreateDate(LocalDateTime.now());
 		this.answerRepository.save(a);
+	}
+	@Autowired
+	private QuestionService questionService;
+	@Test
+	void testJpa1() {
+		for (int i = 1; i <= 300; i++) {
+			String subject = String.format("테스트 데이터입니다:[%03d]", i);
+			String content = "내용무";
+			this.questionService.create(subject, content);
+		}
 	}
 }
