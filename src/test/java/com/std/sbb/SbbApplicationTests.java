@@ -10,6 +10,7 @@ import com.std.sbb.answer.AnswerRepository;
 import com.std.sbb.question.Question;
 import com.std.sbb.question.QuestionRepository;
 import com.std.sbb.question.QuestionService;
+import com.std.sbb.user.UserService;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -93,4 +94,14 @@ class SbbApplicationTests {
 //			this.questionService.create(subject, content);
 //		}
 //	}
+
+	@Autowired
+	private UserService userService;
+
+	@Test
+	@DisplayName("회원데이터 넣기")
+	void beforeEachUserData() {
+		userService.create("user2", "user2@test.com", "1234");
+		userService.create("user3", "user3@test.com", "1234");
+	}
 }
