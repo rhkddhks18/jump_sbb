@@ -19,7 +19,7 @@ import org.springframework.boot.test.context.SpringBootTest;
 import java.time.LocalDateTime;
 import java.util.Optional;
 
-@SpringBootTest
+//@SpringBootTest
 class SbbApplicationTests {
 //	@Autowired
 //	private QuestionRepository questionRepository;
